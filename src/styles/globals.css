@@ -1,11 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    html {
-        font-family: 'Kanit', sans-serif;
-    }
+
+body {
+  color: white;
+  background: #0D0C0D;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section5-conten-image-png::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;  
+    scrollbar-width: none; 
 }

@@ -1,139 +1,254 @@
-import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("website");
+  useEffect(() => {
+    const element = document.querySelector(".section5-conten-image-png");
 
-  function getTabButtonClasses(tab: string) {
-    const baseClasses =
-      "w-full text-xl border-4 border-[#303030] transition-colors";
-    const activeClasses = "bg-[#303030] text-white";
+    element!.addEventListener("wheel", (event: any) => {
+      event.preventDefault();
 
-    return `${baseClasses} ${activeTab === tab ? activeClasses : ""}`;
-  }
+      element!.scrollBy({
+        left: event.deltaY < 0 ? -30 : 30,
+      });
+    });
+  });
+
   return (
-    <>
-      <Head>
-        <title>whyzotee?</title>
-        <meta name="description" content="hello welcome to my profile!" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={"overflow-hidden"}>
-        <section className="main relative w-full h-auto">
-          <Image
-            className="top-0 inset-x-0 m-auto bg-blackdot2 pointer-events-none"
-            src="/frame2.png"
-            alt="frame2"
-            width={1920}
-            height={1080}
-            style={{ height: "auto", maxHeight: "100vh" }}
+    <main className="max-w-[1920px] m-auto overflow-y-hidden">
+      <div className="section1 w-full p-48 flex flex-col lg:flex-row items-center justify-center lg:gap-10">
+        <div className="py-10 lg:py-24 text-4xl lg:text-8xl text-center lg:text-left">
+          {/* <h1>Make A Move,</h1>
+          <h1>Make A Difference</h1> */}
+          <h1>Yo และนี้คือเสียง</h1>
+          <h1>จากเด็กวัด</h1>
+          <br />
+          <p className="text-lg lg:text-3xl">
+            &#8220;Hello, There. Hello, World.&#8221;
+            <br />
+            Welcome to my profile and sorry for bad english.
+          </p>
+        </div>
+        <div className="image relative">
+          <img
+            src="/profile.png"
+            alt="profile"
+            className="w-full h-auto lg:h-500 lg:w-500"
           />
-          <div className="absolute top-1/2 inset-x-0 m-auto max-w-[1920px] h-auto max-h-screen ">
-            <div className="absolute flex flex-col p-6 right-[7.5%] -translate-y-1/2 text-[#303030] bg-white border-[#303030] border-[10px]">
-              <h1 className="lg:text-5xl xl:text-6xl">
-                Make a move,
-                <br />
-                Make a difference.
-              </h1>
-              <p className="lg:text-3xl xl:text-4xl text-right mt-4 pr-2">
-                whyzotee
-              </p>
-              <button className="self-end mt-8 mb-4 py-4 px-6 lg:text-xl xl:text-2xl text-white bg-[#303030] rounded-3xl">
-                <a href="#">About Me</a>
-              </button>
+          <div className="absolute w-40 h-32 sm:w-52 sm:h-48 -top-20 lg:-top-36 right-0 sm:right-8 bg-cover bg-[url(https://www.techhub.in.th/wp-content/uploads/2021/05/118283916_b19c5a1f-162b-410b-8169-f58f0d153752.jpg)]"></div>
+          <div className="absolute w-32 h-24 sm:w-52 sm:h-40 -bottom-12 lg:-bottom-24 left-0 sm:left-12 bg-cover bg-[url(https://ae01.alicdn.com/kf/HTB1jZ5gX.zrK1RjSspmq6AOdFXau/Meme-Face-Art-Body-Decor.jpg_Q90.jpg_.webp)]"></div>
+        </div>
+      </div>
+
+      <div className="section2 py-20">
+        <div className="bg-white w-[80%] flex justify-center m-auto rounded-3xl">
+          <img
+            className="section2-banner"
+            src="https://user-images.githubusercontent.com/53619535/207896410-fee92aa4-65f2-4b27-91d3-86f8424178d3.gif"
+            alt="banner"
+          />
+        </div>
+
+        <div className="mx-auto mt-8 flex justify-around">
+          <div className="box1">
+            <div className="section2-header text-8xl">
+              <h1>WHAT DO I DO</h1>
+              <h1>AT MY JOB</h1>
+            </div>
+            <div className="section2-content mt-20 text-3xl">
+              <h1 className="font-bold">PortfolioPortfolio</h1>
+              <br />
+              <h1>PortfolioPortfoPortfolioPortfoliolio</h1>
+            </div>
+          </div>
+          <div className="box2 mt-10">
+            <div className="section2-content text-3xl">
+              <h1 className="font-bold">PortfolioPortfolio</h1>
+              <br />
+              <h1>PortfolioPortfoPortfolioPortfoliolio</h1>
+            </div>
+            <div className="section2-content mt-32 text-3xl">
+              <h1 className="font-bold">PortfolioPortfolio</h1>
+              <br />
+              <h1>PortfolioPortfoPortfolioPortfoliolio</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="section3 grid grid-cols-3 gap-20 px-[16rem] py-20">
+        <div className="first-row w-fit flex flex-col">
+          <div className="bg-[#554A40] pt-48 p-8 text-7xl">
+            <h1>ABOUT</h1>
+            <h1>ME</h1>
+          </div>
+          <div className="w-40 mt-12 text-center text-2xl leading-[3rem]">
+            <p>
+              PortfolioPortfolioPortfolio PortfolioPortfolioPortfolio
+              PortfolioPortfolioPortfolio
+            </p>
+          </div>
+        </div>
+        <div className="second-row">
+          <div className="h-full bg-white"></div>
+        </div>
+        <div className="third-row ">
+          <div className="third-row-content1  text-2xl ">
+            <p className="font-bold">PortfolioPortfolio</p>
+            <br />
+            <p className="leading-[3rem]">
+              PortfolioPortfolioPortfolioPortfol
+              PortfolioPortfolioPortfolioPortfol
+              PortfolioPortfolioPortfolioPortfol
+              PortfolioPortfolioPortfolioPortfol
+            </p>
+          </div>
+          <div className="third-row-content2 mt-48 text-2xl ">
+            <p className="font-bold">PortfolioPortfolio</p>
+            <br />
+            <p className="leading-[3rem]">
+              PortfolioPortfolioPortfolioPortfol
+              PortfolioPortfolioPortfolioPortfol
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="section4 py-20">
+        <div className="section4-header text-center">
+          <h1 className="text-8xl">MY WORK</h1>
+          <h2 className="text-2xl">
+            PortfolioPortfolioPortfolioPortfolioPortfolioPortfolio
+          </h2>
+        </div>
+
+        <div className="section4-content px-40 py-10">
+          <div className="carousel-1 grid grid-cols-3 gap-10">
+            <div className="card-1 ">
+              <div className="relative h-72 bg-red-300">
+                <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
+                  titlebrabra
+                </p>
+              </div>
+              <div className="content p-10 bg-white text-[#1E1E1E] leading-8">
+                <p className="date-time text-[#1E1E1E] opacity-40">
+                  26/10/2546
+                </p>
+                <h1 className="font-bold">abcdefghijklmnop</h1>
+                <p>
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+                </p>
+                <p className="mt-4">yyyyyyyyyy</p>
+              </div>
+            </div>
+
+            <div className="card-2 ">
+              <div className="relative h-72 bg-red-300">
+                <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
+                  titlebrabra
+                </p>
+              </div>
+              <div className="content p-10 bg-white text-[#1E1E1E] leading-8">
+                <p className="date-time text-[#1E1E1E] opacity-40">
+                  26/10/2546
+                </p>
+                <h1 className="font-bold">abcdefghijklmnop</h1>
+                <p>
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+                </p>
+                <p className="mt-4">yyyyyyyyyy</p>
+              </div>
+            </div>
+
+            <div className="card-3 ">
+              <div className="relative h-72 bg-red-300">
+                <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
+                  titlebrabra
+                </p>
+              </div>
+              <div className="content p-10 bg-white text-[#1E1E1E] leading-8">
+                <p className="date-time text-[#1E1E1E] opacity-40">
+                  26/10/2546
+                </p>
+                <h1 className="font-bold">abcdefghijklmnop</h1>
+                <p>
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+                </p>
+                <p className="mt-4">yyyyyyyyyy</p>
+              </div>
             </div>
           </div>
 
-          <Image
-            className="absolute top-0 inset-x-0 m-auto pointer-events-none z-10"
-            src="/frame1.png"
-            alt="frame1"
-            width={1920}
-            height={1080}
-            style={{ height: "auto", maxHeight: "100vh" }}
-          />
-          <div className="absolute top-0 inset-x-0 m-auto w-[1920px] h-auto max-h-screen bg-red-300 rotate-[-57deg] text-9xl text-center"></div>
-        </section>
-        <section className="container lg:w-[80%] mx-auto my-10 text-white">
-          <div className="relative mx-12 border-[10px] border-[#303030] bg-white">
-            <Image
-              className="my-8 m-auto"
-              src="/manga_layout.png"
-              alt="manga_frame"
-              width={1000}
-              height={2739}
-              style={{ height: "auto", width: "90%" }}
-              priority
-            />
-            <div className="absolute top-0">
-              <div className="content01 w-[95%] top-0 inset-x-0 mx-auto my-48 p-10 flex flex-col text-[#303030] bg-white border-[10px] border-[#303030]">
-                <h1 className="text-5xl mb-4">About me</h1>
-                <p className="ml-24 text-4xl leading-[4.5rem]">
-                  I&#180;m Software Development from Chiang Mai, Thailand,
-                  studying at Chiang Mai Technical College (CMTC)
-                </p>
-                <h1 className="text-5xl mt-4 mb-4">Who&#180;s zotee?</h1>
-                <p className="ml-24 text-4xl leading-[4rem]">
-                  That means &#180;zotee&#180; comes from my nickname, which is
-                  Tee. It was a popular nickname among my friends when we were
-                  in 11th grade, so I decided to use it as my online name. I
-                  didn&#180;t want people to think that &#180;Tee&#180; was too
-                  plain, because it&#180;s too short.
-                </p>
-              </div>
+          <div className="carousel-dot flex justify-center gap-6 mt-8">
+            <button className="h-4 w-4 rounded-full bg-[#3D3933]"></button>
+            <button className="h-4 w-4 rounded-full bg-[#D9D9D9]"></button>
+            <button className="h-4 w-4 rounded-full bg-[#D9D9D9]"></button>
+          </div>
+        </div>
+      </div>
 
-              <div className="content02 w-[95%] top-0 inset-x-0 mx-auto my-48 p-10 flex flex-col text-[#303030] bg-white border-[10px] border-[#303030]">
-                <h1 className="text-5xl mb-4">My Work</h1>
-                <div className="btn-group w-full h-16 flex text-[#303030]">
-                  <button
-                    className={getTabButtonClasses("website")}
-                    onClick={() => setActiveTab("website")}
-                  >
-                    Website
-                  </button>
-                  <button
-                    className={getTabButtonClasses("application")}
-                    onClick={() => setActiveTab("application")}
-                  >
-                    Application
-                  </button>
-                  <button
-                    className={getTabButtonClasses("backend")}
-                    onClick={() => setActiveTab("backend")}
-                  >
-                    BackEnd
-                  </button>
-                  <button
-                    className={getTabButtonClasses("project")}
-                    onClick={() => setActiveTab("project")}
-                  >
-                    Project
-                  </button>
-                </div>
-                <div className="mt-4">
-                  {activeTab === "website" && (
-                    <div className="bg-red-300 p-4 grid grid-cols-3 gap-4">
-                      <div className=" bg-yellow-300">1</div>
-                      <div className=" bg-green-300">2</div>
-                      <div className=" bg-blue-300">3</div>
-                      <div className=" bg-green-300">4</div>
-                      <div className=" bg-yellow-300">5</div>
-                    </div>
-                  )}
-                  {activeTab === "application" && (
-                    <div className="bg-green-300"> 2</div>
-                  )}
-                  {activeTab === "backend" && (
-                    <div className="bg-blue-300"> 3</div>
-                  )}
-                </div>
-              </div>
+      <div className="section5-content px-40 py-10 text-center">
+        <h1 className="text-8xl mb-24">TECH I USE</h1>
+
+        <div className="relative border-[6px] rounded-[61px]">
+          <p className="absolute -top-6 left-28 px-8 text-2xl bg-[#0D0C0D]">
+            Front End
+          </p>
+          <div className="section5-conten-image-png px-8 py-16 flex gap-16 overflow-x-scroll">
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/favicon.ico" alt="" height={160} width={160} />
+          </div>
+        </div>
+        <div className="relative mt-20 border-[6px] rounded-[61px]">
+          <p className="absolute -top-6 left-28 px-8 text-2xl bg-[#0D0C0D]">
+            Back End
+          </p>
+          <div className="section5-conten-image-png  px-8 py-16 flex gap-16 overflow-x-scroll">
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+            <Image src="/profile.png" alt="" height={160} width={160} />
+          </div>
+        </div>
+      </div>
+
+      <div className="section5-content  py-20">
+        <div className="h-[500px] w-[80%] m-auto bg-red-300"></div>
+        <div className="w-[80%] m-auto mt-8  flex justify-between">
+          <div>
+            <h1 className="text-8xl">THANK YOU SO</h1>
+            <h1 className="text-9xl">MUSH</h1>
+          </div>
+          <div className="contact-logo mt-12">
+            <div className="flex justify-end gap-8">
+              <div className="h-12 w-12 rounded-full bg-[#D9D9D9]"></div>
+              <div className="h-12 w-12 rounded-full bg-[#D9D9D9]"></div>
+              <div className="h-12 w-12 rounded-full bg-[#D9D9D9]"></div>
+            </div>
+            <div className="mt-8 text-right text-2xl">
+              <p>PortfolioPortfolioPortfolioPortfolio</p>
+              <p>PortfolioPortfolio</p>
             </div>
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </div>
+    </main>
   );
 }
