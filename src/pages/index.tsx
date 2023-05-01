@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <main className="max-w-[1920px] m-auto overflow-y-hidden">
-      <div className="section1 w-full p-24 lg:p-30 2xl:p-48 flex flex-col lg:flex-row items-center justify-center lg:gap-10">
+      <div className="section1 w-full p-24 lg:p-30 2xl:p-52 flex flex-col lg:flex-row items-center justify-center lg:gap-10">
         <div className="py-10 lg:py-24 text-4xl lg:text-7xl 2xl:text-8xl text-center lg:text-left">
           {/* <h1>Make A Move,</h1>
           <h1>Make A Difference</h1> */}
@@ -52,43 +52,45 @@ export default function Home() {
               <h1>AT MY JOB</h1>
             </div>
             <div className="section2-content mt-20 text-3xl">
-              <h1 className="font-bold">PortfolioPortfolio</h1>
+              <h1 className="font-bold">Sleep</h1>
               <br />
-              <h1>PortfolioPortfoPortfolioPortfoliolio</h1>
+              <h1>yo yo yo yo yo yo yo</h1>
             </div>
           </div>
           <div className="box2 2xl:mt-10">
             <div className="section2-content text-3xl">
-              <h1 className="font-bold">PortfolioPortfolio</h1>
+              <h1 className="font-bold">Eat</h1>
               <br />
-              <h1>PortfolioPortfoPortfolioPortfoliolio</h1>
+              <h1>yum yum yum yum yum yum</h1>
             </div>
             <div className="section2-content mt-32 text-3xl">
-              <h1 className="font-bold">PortfolioPortfolio</h1>
+              <h1 className="font-bold">Play</h1>
               <br />
-              <h1>PortfolioPortfoPortfolioPortfoliolio</h1>
+              <h1>let&#180;goooooooooooooo</h1>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="section3 grid grid-cols-3 gap-20 px-24 2xl:px-60 py-20">
-        <div className="first-row w-fit flex flex-col">
-          <div className="bg-[#554A40] pt-48 p-8 text-7xl">
+      <div className="section3 flex flex-wrap gap-20 px-24 2xl:px-48 py-20">
+        <div className="first-row flex-[1] w-fit flex flex-col">
+          <div className="bg-[#554A40] mx-auto pt-48 p-8 text-8xl">
             <h1>ABOUT</h1>
             <h1>ME</h1>
           </div>
-          <div className="w-40 mt-12 text-center text-2xl leading-[3rem]">
+          <div className=" flex-1 mt-12 text-left text-2xl leading-[3rem]">
             <p>
-              PortfolioPortfolioPortfolio PortfolioPortfolioPortfolio
-              PortfolioPortfolioPortfolio
+              &emsp;i studying high vocational computer technology at chiang mai
+              technical college and i want to learn new things about code.
+              Please tell me about code if i didn&#180;t good enough and nice to
+              meet you!😄
             </p>
           </div>
         </div>
-        <div className="second-row">
-          <div className="h-full bg-white"></div>
+        <div className="second-row flex-[1]">
+          <img src="/aboutme.png" alt="aboutme" />
         </div>
-        <div className="third-row ">
+        <div className="third-row flex-[1]">
           <div className="third-row-content1  text-2xl ">
             <p className="font-bold">PortfolioPortfolio</p>
             <br />
@@ -199,37 +201,53 @@ export default function Home() {
           <p className="absolute -top-6 left-28 px-8 text-2xl bg-[#0D0C0D]">
             Front End
           </p>
-          <div className="section5-conten-image-png px-8 py-16 flex gap-16 overflow-x-scroll">
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/favicon.ico" alt="" height={160} width={160} />
+          <div className="section5-conten-image-png flex px-8 py-12 gap-8 overflow-x-scroll">
+            <Image
+              src="/flutter_logo.png"
+              alt="flutter_logo"
+              height={150}
+              width={150}
+            />
+            <Image
+              src="/svelte_logo.png"
+              alt="svelte_logo"
+              height={150}
+              width={150}
+            />
+            <Image
+              src="/react_logo.png"
+              alt="react_logo"
+              height={150}
+              width={150}
+            />
+            <Image
+              src="/tailwindcss_logo.png"
+              alt="tailwindcss_logo"
+              height={150}
+              width={150}
+            />
           </div>
         </div>
         <div className="relative mt-20 border-[6px] rounded-[61px]">
           <p className="absolute -top-6 left-28 px-8 text-2xl bg-[#0D0C0D]">
             Back End
           </p>
-          <div className="section5-conten-image-png  px-8 py-16 flex gap-16 overflow-x-scroll">
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
-            <Image src="/profile.png" alt="" height={160} width={160} />
+          <div className="section5-conten-image-png flex px-8 py-16 gap-8 overflow-x-scroll">
+            <Image src="/js_logo.png" alt="js_logo" height={150} width={150} />
+            <Image src="/ts_logo.png" alt="ts_logo" height={150} width={150} />
+            <Image
+              src="/nodejs_logo.png"
+              alt="nodejs_logo"
+              height={150}
+              width={150}
+            />
+            <Image src="/py_logo.png" alt="py_logo" height={150} width={150} />
           </div>
         </div>
       </div>
 
       <div className="section5-content  py-20">
-        <div className="h-[500px] w-[80%] m-auto bg-red-300"></div>
+        <div className="h-[500px] w-[80%] m-auto bg-no-repeat bg-cover bg-center bg-[url(/idol_yoasobi.jpg)]"></div>
         <div className="w-[80%] m-auto mt-8  flex justify-between">
           <div>
             <h1 className="text-7xl 2xl:text-8xl">THANK YOU SO</h1>
