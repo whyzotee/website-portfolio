@@ -14,6 +14,10 @@ export default function Home() {
     });
   });
 
+  function clickFacebook() {
+    console.log("Click!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  }
+
   return (
     <main className="max-w-[1920px] m-auto overflow-y-hidden">
       <div className="section1 w-full p-24 lg:p-30 2xl:p-52 flex flex-col lg:flex-row items-center justify-center lg:gap-10">
@@ -92,22 +96,20 @@ export default function Home() {
         </div>
         <div className="third-row flex-[1]">
           <div className="third-row-content1  text-2xl ">
-            <p className="font-bold">PortfolioPortfolio</p>
+            <p className="font-bold">Personal Information</p>
             <br />
             <p className="leading-[3rem]">
-              PortfolioPortfolioPortfolioPortfol
-              PortfolioPortfolioPortfolioPortfol
-              PortfolioPortfolioPortfolioPortfol
-              PortfolioPortfolioPortfolioPortfol
+              Name : Chatanrint Boonsaeng
+              <br /> NickName : Tee
+              <br /> Age : 19
+              <br /> From : Chiang Mai, Thailand
+              <br /> Hobby : Sleep😴
             </p>
           </div>
           <div className="third-row-content2 mt-48 text-2xl ">
-            <p className="font-bold">PortfolioPortfolio</p>
+            <p className="font-bold">whyzotee?</p>
             <br />
-            <p className="leading-[3rem]">
-              PortfolioPortfolioPortfolioPortfol
-              PortfolioPortfolioPortfolioPortfol
-            </p>
+            <p className="leading-[3rem]">IDK 😆</p>
           </div>
         </div>
       </div>
@@ -203,25 +205,25 @@ export default function Home() {
           </p>
           <div className="section5-conten-image-png flex px-8 py-12 gap-8 overflow-x-scroll">
             <Image
-              src="/flutter_logo.png"
+              src="/logo/flutter_logo.png"
               alt="flutter_logo"
               height={150}
               width={150}
             />
             <Image
-              src="/svelte_logo.png"
+              src="/logo/svelte_logo.png"
               alt="svelte_logo"
               height={150}
               width={150}
             />
             <Image
-              src="/react_logo.png"
+              src="/logo/react_logo.png"
               alt="react_logo"
               height={150}
               width={150}
             />
             <Image
-              src="/tailwindcss_logo.png"
+              src="/logo/tailwindcss_logo.png"
               alt="tailwindcss_logo"
               height={150}
               width={150}
@@ -233,21 +235,38 @@ export default function Home() {
             Back End
           </p>
           <div className="section5-conten-image-png flex px-8 py-16 gap-8 overflow-x-scroll">
-            <Image src="/js_logo.png" alt="js_logo" height={150} width={150} />
-            <Image src="/ts_logo.png" alt="ts_logo" height={150} width={150} />
             <Image
-              src="/nodejs_logo.png"
+              src="/logo/js_logo.png"
+              alt="js_logo"
+              height={150}
+              width={150}
+            />
+            <Image
+              src="/logo/ts_logo.png"
+              alt="ts_logo"
+              height={150}
+              width={150}
+            />
+            <Image
+              src="/logo/nodejs_logo.png"
               alt="nodejs_logo"
               height={150}
               width={150}
             />
-            <Image src="/py_logo.png" alt="py_logo" height={150} width={150} />
+            <Image
+              src="/logo/py_logo.png"
+              alt="py_logo"
+              height={150}
+              width={150}
+            />
           </div>
         </div>
       </div>
 
       <div className="section5-content  py-20">
-        <div className="h-[500px] w-[80%] m-auto bg-no-repeat bg-cover bg-center bg-[url(/idol_yoasobi.jpg)]"></div>
+        <div className="h-[500px] w-[80%] m-auto flex justify-center bg-[#d6c9ba]">
+          <img src="/myroom.png" alt="myroom" />
+        </div>
         <div className="w-[80%] m-auto mt-8  flex justify-between">
           <div>
             <h1 className="text-7xl 2xl:text-8xl">THANK YOU SO</h1>
@@ -255,13 +274,29 @@ export default function Home() {
           </div>
           <div className="contact-logo mt-8 2xl:mt-12">
             <div className="flex justify-end gap-8">
-              <div className="h-12 w-12 rounded-full bg-[#D9D9D9]"></div>
-              <div className="h-12 w-12 rounded-full bg-[#D9D9D9]"></div>
-              <div className="h-12 w-12 rounded-full bg-[#D9D9D9]"></div>
+              <a
+                href="https://github.com/Z0TEExt"
+                className="relative bg-no-repeat h-12 w-12 rounded-full"
+              >
+                <Image src="/logo/gh_logo.png" alt="gh_logo" fill />
+              </a>
+              <a
+                href="#"
+                onClick={clickFacebook}
+                className="relative bg-no-repeat h-12 w-12 rounded-full "
+              >
+                <Image src="/logo/fb_logo.png" alt="fb_logo" fill />
+              </a>
+              <a
+                href="#"
+                className="relative bg-no-repeat h-12 w-12 rounded-full bg-white"
+              >
+                <Image src="/logo/mail.png" alt="mail_logo" fill />
+              </a>
             </div>
             <div className="mt-8 text-right text-2xl">
-              <p>PortfolioPortfolioPortfolioPortfolio</p>
-              <p>PortfolioPortfolio</p>
+              <p>วันนี้กินอะไรดี?</p>
+              <p>whyzotee</p>
             </div>
           </div>
         </div>
