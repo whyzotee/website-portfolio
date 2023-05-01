@@ -113,66 +113,72 @@ export default function Home() {
       <div className="section4 py-20">
         <div className="section4-header text-center">
           <h1 className="text-8xl">MY WORK</h1>
-          <h2 className="text-2xl">
-            PortfolioPortfolioPortfolioPortfolioPortfolioPortfolio
-          </h2>
+          <h2 className="text-2xl">Project bra bra bra</h2>
         </div>
 
         <div className="section4-content px-40 py-10">
-          <div className="carousel-1 grid grid-cols-3 gap-10">
-            <div className="card-1 ">
-              <div className="relative h-72 bg-red-300">
+          <div className="carousel-1 flex flex-wrap gap-10">
+            <div className="card-1 flex flex-col flex-[1]">
+              <div className="relative h-72 shadow-lg bg-contain bg-center bg-no-repeat bg-white bg-[url(/sushidrop.png)]">
                 <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
-                  titlebrabra
+                  dart
                 </p>
               </div>
-              <div className="content p-10 bg-white text-[#1E1E1E] leading-8">
+              <div className="content flex-grow p-10 bg-white text-[#1E1E1E] leading-8">
                 <p className="date-time text-[#1E1E1E] opacity-40">
                   26/10/2546
                 </p>
-                <h1 className="font-bold">abcdefghijklmnop</h1>
+                <h1 className="font-bold">SushiDrop</h1>
                 <p>
-                  xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxx.
+                  Delivery app project from an internship for a long time in 2
+                  months.
                 </p>
                 <p className="mt-4">yyyyyyyyyy</p>
               </div>
             </div>
 
-            <div className="card-2 ">
-              <div className="relative h-72 bg-red-300">
+            <div className="card-2 flex flex-col flex-[1]">
+              <div className="relative h-72 shadow-lg bg-[#2d2e30] bg-contain bg-no-repeat bg-center bg-[url(/linebot.png)]">
                 <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
-                  titlebrabra
+                  javascript
                 </p>
               </div>
-              <div className="content p-10 bg-white text-[#1E1E1E] leading-8">
+              <div className="content flex-grow p-10 bg-white text-[#1E1E1E] leading-8">
                 <p className="date-time text-[#1E1E1E] opacity-40">
                   26/10/2546
                 </p>
-                <h1 className="font-bold">abcdefghijklmnop</h1>
+                <h1 className="font-bold">LineBot by Nodejs</h1>
                 <p>
-                  xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxx.
+                  The Line Bot connects to google sheet and performs read/write
+                  and edit stock via chat room in the Line application.
                 </p>
+
                 <p className="mt-4">yyyyyyyyyy</p>
               </div>
             </div>
 
-            <div className="card-3 ">
-              <div className="relative h-72 bg-red-300">
+            <div className="card-3 flex flex-col flex-[1]">
+              <div className="relative h-72 shadow-lg bg-left bg-black bg-no-repeat  bg-[url(/websocket.png)]">
                 <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
-                  titlebrabra
+                  javascript
                 </p>
               </div>
-              <div className="content p-10 bg-white text-[#1E1E1E] leading-8">
+              <div className="content flex-grow p-10 shadow-lg bg-white text-[#1E1E1E] leading-8">
                 <p className="date-time text-[#1E1E1E] opacity-40">
                   26/10/2546
                 </p>
-                <h1 className="font-bold">abcdefghijklmnop</h1>
+                <h1 className="font-bold">Websocket & REST api</h1>
                 <p>
-                  xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxx.
+                  Backend for train-to-moon project inspiration from website
+                  <a
+                    className="text-blue-400 hover:text-blue-500"
+                    href="https://drinksonme.live"
+                  >
+                    &nbsp; drinksonme.live
+                  </a>
+                  .
                 </p>
+
                 <p className="mt-4">yyyyyyyyyy</p>
               </div>
             </div>
