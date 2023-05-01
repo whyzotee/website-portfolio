@@ -16,32 +16,28 @@ export default function Home() {
 
   return (
     <main className="max-w-[1920px] m-auto overflow-y-hidden">
-      <div className="section1 w-full p-48 flex flex-col lg:flex-row items-center justify-center lg:gap-10">
-        <div className="py-10 lg:py-24 text-4xl lg:text-8xl text-center lg:text-left">
+      <div className="section1 w-full p-24 lg:p-30 2xl:p-48 flex flex-col lg:flex-row items-center justify-center lg:gap-10">
+        <div className="py-10 lg:py-24 text-4xl lg:text-7xl 2xl:text-8xl text-center lg:text-left">
           {/* <h1>Make A Move,</h1>
           <h1>Make A Difference</h1> */}
           <h1>Yo และนี้คือเสียง</h1>
           <h1>จากเด็กวัด</h1>
           <br />
-          <p className="text-lg lg:text-3xl">
+          <p className="text-lg lg:text-2xl 2xl:text-3xl">
             &#8220;Hello, There. Hello, World.&#8221;
             <br />
             Welcome to my profile and sorry for bad english.
           </p>
         </div>
         <div className="image relative">
-          <img
-            src="/profile.png"
-            alt="profile"
-            className="w-full h-auto lg:h-500 lg:w-500"
-          />
+          <Image src="/profile.png" alt="profile" height={500} width={500} />
           <div className="absolute w-40 h-32 sm:w-52 sm:h-48 -top-20 lg:-top-36 right-0 sm:right-8 bg-cover bg-[url(https://www.techhub.in.th/wp-content/uploads/2021/05/118283916_b19c5a1f-162b-410b-8169-f58f0d153752.jpg)]"></div>
           <div className="absolute w-32 h-24 sm:w-52 sm:h-40 -bottom-12 lg:-bottom-24 left-0 sm:left-12 bg-cover bg-[url(https://ae01.alicdn.com/kf/HTB1jZ5gX.zrK1RjSspmq6AOdFXau/Meme-Face-Art-Body-Decor.jpg_Q90.jpg_.webp)]"></div>
         </div>
       </div>
 
       <div className="section2 py-20">
-        <div className="bg-white w-[80%] flex justify-center m-auto rounded-3xl">
+        <div className="w-[80%] m-auto flex justify-center rounded-3xl bg-white">
           <img
             className="section2-banner"
             src="https://user-images.githubusercontent.com/53619535/207896410-fee92aa4-65f2-4b27-91d3-86f8424178d3.gif"
@@ -49,9 +45,9 @@ export default function Home() {
           />
         </div>
 
-        <div className="mx-auto mt-8 flex justify-around">
+        <div className="mx-auto p-24 mt-8 flex justify-around">
           <div className="box1">
-            <div className="section2-header text-8xl">
+            <div className="section2-header text-7xl 2xl:text-8xl">
               <h1>WHAT DO I DO</h1>
               <h1>AT MY JOB</h1>
             </div>
@@ -61,7 +57,7 @@ export default function Home() {
               <h1>PortfolioPortfoPortfolioPortfoliolio</h1>
             </div>
           </div>
-          <div className="box2 mt-10">
+          <div className="box2 2xl:mt-10">
             <div className="section2-content text-3xl">
               <h1 className="font-bold">PortfolioPortfolio</h1>
               <br />
@@ -76,7 +72,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="section3 grid grid-cols-3 gap-20 px-[16rem] py-20">
+      <div className="section3 grid grid-cols-3 gap-20 px-24 2xl:px-60 py-20">
         <div className="first-row w-fit flex flex-col">
           <div className="bg-[#554A40] pt-48 p-8 text-7xl">
             <h1>ABOUT</h1>
@@ -136,9 +132,8 @@ export default function Home() {
                 </p>
                 <h1 className="font-bold">abcdefghijklmnop</h1>
                 <p>
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+                  xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxx.
                 </p>
                 <p className="mt-4">yyyyyyyyyy</p>
               </div>
@@ -156,9 +151,8 @@ export default function Home() {
                 </p>
                 <h1 className="font-bold">abcdefghijklmnop</h1>
                 <p>
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+                  xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxx.
                 </p>
                 <p className="mt-4">yyyyyyyyyy</p>
               </div>
@@ -176,9 +170,8 @@ export default function Home() {
                 </p>
                 <h1 className="font-bold">abcdefghijklmnop</h1>
                 <p>
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+                  xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  xxxxxxxxxxxxxxxxxxxxxxx.
                 </p>
                 <p className="mt-4">yyyyyyyyyy</p>
               </div>
@@ -233,10 +226,10 @@ export default function Home() {
         <div className="h-[500px] w-[80%] m-auto bg-red-300"></div>
         <div className="w-[80%] m-auto mt-8  flex justify-between">
           <div>
-            <h1 className="text-8xl">THANK YOU SO</h1>
-            <h1 className="text-9xl">MUSH</h1>
+            <h1 className="text-7xl 2xl:text-8xl">THANK YOU SO</h1>
+            <h1 className="text-8xl 2xl:text-9xl">MUSH</h1>
           </div>
-          <div className="contact-logo mt-12">
+          <div className="contact-logo mt-8 2xl:mt-12">
             <div className="flex justify-end gap-8">
               <div className="h-12 w-12 rounded-full bg-[#D9D9D9]"></div>
               <div className="h-12 w-12 rounded-full bg-[#D9D9D9]"></div>
