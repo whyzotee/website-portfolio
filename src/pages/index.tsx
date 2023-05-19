@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -20,6 +21,14 @@ export default function Home() {
 
   return (
     <main className="max-w-[1920px] m-auto overflow-y-hidden">
+      <nav className="p-8 ">
+        <Link
+          href="/chat"
+          className="px-4 py-2 rounded-3xl bg-red-300 text-[#505050]"
+        >
+          Chat
+        </Link>
+      </nav>
       <div className="section1 w-full p-24 lg:p-30 2xl:p-52 flex flex-col lg:flex-row items-center justify-center lg:gap-10">
         <div className="py-10 lg:py-24 text-4xl lg:text-7xl 2xl:text-8xl text-center lg:text-left">
           {/* <h1>Make A Move,</h1>
@@ -35,8 +44,6 @@ export default function Home() {
         </div>
         <div className="image relative">
           <Image src="/profile.png" alt="profile" height={500} width={500} />
-          <div className="absolute w-40 h-32 sm:w-52 sm:h-48 -top-20 lg:-top-36 right-0 sm:right-8 bg-cover bg-[url(https://www.techhub.in.th/wp-content/uploads/2021/05/118283916_b19c5a1f-162b-410b-8169-f58f0d153752.jpg)]"></div>
-          <div className="absolute w-32 h-24 sm:w-52 sm:h-40 -bottom-12 lg:-bottom-24 left-0 sm:left-12 bg-cover bg-[url(https://ae01.alicdn.com/kf/HTB1jZ5gX.zrK1RjSspmq6AOdFXau/Meme-Face-Art-Body-Decor.jpg_Q90.jpg_.webp)]"></div>
         </div>
       </div>
 
@@ -264,7 +271,7 @@ export default function Home() {
       </div>
 
       <div className="section5-content  py-20">
-        <div className="h-[500px] w-[80%] m-auto flex justify-center bg-[#d6c9ba]">
+        <div className="h-auto w-[80%] m-auto flex justify-center bg-[#d6c9ba]">
           <img src="/myroom.png" alt="myroom" />
         </div>
         <div className="w-[80%] m-auto mt-8  flex justify-between">
