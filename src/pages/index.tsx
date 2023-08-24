@@ -1,313 +1,253 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
+import Typed from "typed.js";
 import Link from "next/link";
-import { useEffect } from "react";
+import Image from "next/image";
+import Lottie from "lottie-react";
+import codingAnimation from "../../public/coding_animation.json";
 
 export default function Home() {
-  useEffect(() => {
-    const element = document.querySelector(".section5-conten-image-png");
+  const wordAnim = React.useRef(null);
 
-    element!.addEventListener("wheel", (event: any) => {
-      event.preventDefault();
-
-      element!.scrollBy({
-        left: event.deltaY < 0 ? -30 : 30,
-      });
+  React.useEffect(() => {
+    const typed = new Typed(wordAnim.current, {
+      strings: ["Chatnarint.", "Developer.", "Student."],
+      typeSpeed: 150,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true,
     });
-  });
 
-  function clickFacebook() {
-    console.log("Click!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  }
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+      typed.destroy();
+    };
+  }, []);
 
   return (
-    <main className="max-w-[1920px] m-auto overflow-y-hidden">
-      <nav className="p-8 ">
-        <Link
-          href="/chat"
-          className="px-4 py-2 rounded-3xl bg-red-300 text-[#505050]"
-        >
-          Chat
-        </Link>
+    <main className="w-full m-auto overflow-y-hidden bg-[#252525]">
+      <nav className="bg-[#505050]">
+        <div className="max-w-[1270px] p-4 m-auto flex justify-between font-bold">
+          <h1 className="text-[#FFDAB9] text-xl">@whyzotee</h1>
+          <ul className="flex gap-4 text-xl">
+            <li>
+              <Link href="#">Home</Link>
+            </li>
+            <li>
+              <Link href="#">My Work</Link>
+            </li>
+            <li>
+              <Link href="#">About me</Link>
+            </li>
+            <li>
+              <Link href="#">Github</Link>
+            </li>
+          </ul>
+        </div>
       </nav>
-      <div className="section1 w-full p-24 lg:p-30 2xl:p-52 flex flex-col lg:flex-row items-center justify-center lg:gap-10">
-        <div className="py-10 lg:py-24 text-4xl lg:text-7xl 2xl:text-8xl text-center lg:text-left">
-          {/* <h1>Make A Move,</h1>
-          <h1>Make A Difference</h1> */}
-          <h1>Yo และนี้คือเสียง</h1>
-          <h1>จากเด็กวัด</h1>
-          <br />
-          <p className="text-lg lg:text-2xl 2xl:text-3xl">
-            &#8220;Hello, There. Hello, World.&#8221;
-            <br />
-            Welcome to my profile and sorry for bad english.
+
+      <section className="max-w-[1270px] flex justify-center items-center m-auto py-24 gap-x-12">
+        <div className="w-1/2 flex flex-col text-base gap-y-6">
+          <p>Welcome To my portfolio website</p>
+          <h1 className="flex text-3xl font-bold">
+            Hello World!, I&#39;m&nbsp;
+            <span className="text-[#FFDAB9]" ref={wordAnim}></span>
+          </h1>
+          <p>
+            i studying high vocational computer technology at chiang mai
+            technical college and i want to learn new things about code. Please
+            tell me about code if i didn&#39;t good enough and nice to meet you!
           </p>
+          <Link
+            className="w-fit px-4 py-2 text-base bg-[#505050] rounded-lg"
+            href="#"
+          >
+            Remume Click!
+          </Link>
         </div>
-        <div className="image relative">
-          <Image src="/profile.png" alt="profile" height={500} width={500} />
+        <div className="w-1/2 ">
+          <Lottie animationData={codingAnimation} loop={false} />
         </div>
-      </div>
+      </section>
 
-      <div className="section2 py-20">
-        <div className="w-[80%] m-auto flex justify-center rounded-3xl bg-white">
-          <img
-            className="section2-banner"
-            src="https://user-images.githubusercontent.com/53619535/207896410-fee92aa4-65f2-4b27-91d3-86f8424178d3.gif"
-            alt="banner"
-          />
-        </div>
-
-        <div className="mx-auto p-24 mt-8 flex justify-around">
-          <div className="box1">
-            <div className="section2-header text-7xl 2xl:text-8xl">
-              <h1>WHAT DO I DO</h1>
-              <h1>AT MY JOB</h1>
+      <section className="max-w-[1270px] flex m-auto py-12">
+        <div className="w-1/2 flex flex-col text-base">
+          <h1 className="text-3xl font-bold">Skils</h1>
+          <div className="flex my-8 gap-6 items-start">
+            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+              <img src="/logo/flutter_logo.png" alt="flutter_logo" />
             </div>
-            <div className="section2-content mt-20 text-3xl">
-              <h1 className="font-bold">Sleep</h1>
-              <br />
-              <h1>yo yo yo yo yo yo yo</h1>
+            <div className="lg:w-[70%] flex flex-col gap-2">
+              <h2 className="flex items-center text-2xl font-bold">
+                Flutter&ensp;
+                <span className="text-base text-[#FFDAB9] font-normal">
+                  Application framework
+                </span>
+              </h2>
+              <p>
+                Flutter transforms the app development process. Build, test, and
+                deploy beautiful mobile, web, desktop, and embedded apps from a
+                single codebase.
+              </p>
             </div>
           </div>
-          <div className="box2 2xl:mt-10">
-            <div className="section2-content text-3xl">
-              <h1 className="font-bold">Eat</h1>
-              <br />
-              <h1>yum yum yum yum yum yum</h1>
+          <div className="flex my-8 gap-6 items-start">
+            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full filter">
+              <img src="/logo/react_logo.png " alt="react_logo" />
             </div>
-            <div className="section2-content mt-32 text-3xl">
-              <h1 className="font-bold">Play</h1>
-              <br />
-              <h1>let&#180;goooooooooooooo</h1>
+            <div className="lg:w-[70%] flex flex-col gap-2">
+              <h2 className="flex items-center text-2xl font-bold">
+                React Js&ensp;
+                <span className="text-base text-[#FFDAB9] font-normal">
+                  Js framework
+                </span>
+              </h2>
+              <p>
+                React is a free and open-source front-end JavaScript library for
+                building user interfaces based on components. It is maintained
+                by Meta (formerly Facebook) and a community of individual
+                developers and companies.
+              </p>
+            </div>
+          </div>
+          <div className="flex my-8 gap-6 items-start">
+            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full filter">
+              <img src="/logo/cpp_logo.png" alt="cpp_logo" />
+            </div>
+            <div className="lg:w-[70%] flex flex-col gap-2">
+              <h2 className="flex items-center text-2xl font-bold">
+                CPP&ensp;
+                <span className="text-base text-[#FFDAB9] font-normal">
+                  Programming language
+                </span>
+              </h2>
+              <p>
+                CPP is a high-level, general-purpose programming language
+                created by Danish computer scientist Bjarne Stroustrup. First
+                released in 1985 as an extension of the C programming language.
+              </p>
+            </div>
+          </div>
+          <div className="flex my-8 gap-6 items-start">
+            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+              <img src="/logo/js_logo.png" alt="js_logo" />
+            </div>
+            <div className="lg:w-[70%] flex flex-col gap-2">
+              <h2 className="flex items-center text-2xl font-bold">
+                Javascript&ensp;
+                <span className="text-base text-[#FFDAB9] font-normal">
+                  Programming language
+                </span>
+              </h2>
+              <p>
+                Javascript is a programming language that is one of the core
+                technologies of the World Wide Web, alongside HTML and CSS. As
+                of 2023, 98.7% of websites use JavaScript on the client side for
+                webpage behavior.
+              </p>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="section3 flex flex-wrap gap-20 px-24 2xl:px-48 py-20">
-        <div className="first-row flex-[1] w-fit flex flex-col">
-          <div className="bg-[#554A40] mx-auto pt-48 p-8 text-8xl">
-            <h1>ABOUT</h1>
-            <h1>ME</h1>
+        <div className="w-1/2 flex flex-col">
+          <h1 className="text-[#FFDAB9] text-3xl font-bold">More Sikls</h1>
+          <div className="flex my-8 gap-6 items-start">
+            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+              <img
+                className="h-full w-full object-contain"
+                src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg"
+                alt="git_logo"
+              />
+            </div>
+            <div className="lg:w-[70%] flex flex-col gap-2">
+              <h2 className="flex items-center text-2xl font-bold">
+                Git&ensp;
+                <span className="text-base text-[#FFDAB9] font-normal">
+                  Project management
+                </span>
+              </h2>
+              <p>
+                Git is a free and open source distributed version control system
+                designed to handle everything from small to very large projects
+                with speed and efficiency.
+              </p>
+            </div>
           </div>
-          <div className=" flex-1 mt-12 text-left text-2xl leading-[3rem]">
+          <div className="flex my-8 gap-6 items-start">
+            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+              <img
+                className="h-full w-full object-contain invert"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/800px-GitHub_Invertocat_Logo.svg.png"
+                alt="git_logo"
+              />
+            </div>
+            <div className="lg:w-[70%] flex flex-col gap-2">
+              <h2 className="flex items-center text-2xl font-bold">
+                Github&ensp;
+                <span className="text-base text-[#FFDAB9] font-normal">
+                  Project management
+                </span>
+              </h2>
+              <p>
+                is a platform and cloud-based service for software development
+                and version control using Git, allowing developers to store and
+                manage their code
+              </p>
+            </div>
+          </div>
+          <div className="flex my-8 gap-6 items-start">
+            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+              <img
+                className="h-full w-full object-contain"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png"
+                alt="figma_logo"
+              />
+            </div>
+            <div className="lg:w-[70%] flex flex-col gap-2">
+              <h2 className="flex items-center text-2xl font-bold">
+                Figma&ensp;
+                <span className="text-base text-[#FFDAB9] font-normal">
+                  Designing & Protoyping tool
+                </span>
+              </h2>
+              <p>
+                Figma is a collaborative web application for interface design,
+                with additional offline features enabled by desktop applications
+                for macOS and Windows. The feature set of Figma focuses on user
+                interface and user experience design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-[1270px] flex justify-center m-auto py-12">
+        <h1 className="text-3xl font-bold">My Work</h1>
+      </section>
+
+      <footer className="bg-[#505050]">
+        <div className="max-w-[1270px] p-4 m-auto flex font-bold">
+          <div className="text-base w-1/3">
+            <h1 className="text-xl text-[#FFDAB9]">@whyzotee</h1>
             <p>
-              &emsp;i studying high vocational computer technology at chiang mai
-              technical college and i want to learn new things about code.
-              Please tell me about code if i didn&#180;t good enough and nice to
-              meet you!😄
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sed
+              ullam consequatur iusto ab nostrum sunt soluta deserunt inventore
+              officiis perferendis voluptates, molestias adipisci recusandae
+              nesciunt quod nisi quia modi.
             </p>
           </div>
-        </div>
-        <div className="second-row flex-[1]">
-          <img src="/aboutme.png" alt="aboutme" />
-        </div>
-        <div className="third-row flex-[1]">
-          <div className="third-row-content1  text-2xl ">
-            <p className="font-bold">Personal Information</p>
-            <br />
-            <p className="leading-[3rem]">
-              Name : Chatanrint Boonsaeng
-              <br /> NickName : Tee
-              <br /> Age : 19
-              <br /> From : Chiang Mai, Thailand
-              <br /> Hobby : Sleep😴
-            </p>
+          <div className="w-1/3">
+            <h1 className="text-xl text-[#FFDAB9]">Follow Me</h1>
           </div>
-          <div className="third-row-content2 mt-48 text-2xl ">
-            <p className="font-bold">whyzotee?</p>
-            <br />
-            <p className="leading-[3rem]">IDK 😆</p>
+          <div className="w-1/3">
+            <h1 className="text-xl text-[#FFDAB9]">Another Link</h1>
+            <ul>
+              <li>Brabrabra</li>
+              <li>Brabrabra</li>
+              <li>Brabrabra</li>
+            </ul>
           </div>
         </div>
-      </div>
-
-      <div className="section4 py-20">
-        <div className="section4-header text-center">
-          <h1 className="text-8xl">MY WORK</h1>
-          <h2 className="text-2xl">Project bra bra bra</h2>
-        </div>
-
-        <div className="section4-content px-40 py-10">
-          <div className="carousel-1 flex flex-wrap gap-10">
-            <div className="card-1 flex flex-col flex-[1]">
-              <div className="relative h-72 shadow-lg bg-contain bg-center bg-no-repeat bg-white bg-[url(/sushidrop.png)]">
-                <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
-                  dart
-                </p>
-              </div>
-              <div className="content flex-grow p-10 bg-white text-[#1E1E1E] leading-8">
-                <p className="date-time text-[#1E1E1E] opacity-40">
-                  26/10/2546
-                </p>
-                <h1 className="font-bold">SushiDrop</h1>
-                <p>
-                  Delivery app project from an internship for a long time in 2
-                  months.
-                </p>
-                <p className="mt-4">yyyyyyyyyy</p>
-              </div>
-            </div>
-
-            <div className="card-2 flex flex-col flex-[1]">
-              <div className="relative h-72 shadow-lg bg-[#2d2e30] bg-contain bg-no-repeat bg-center bg-[url(/linebot.png)]">
-                <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
-                  javascript
-                </p>
-              </div>
-              <div className="content flex-grow p-10 bg-white text-[#1E1E1E] leading-8">
-                <p className="date-time text-[#1E1E1E] opacity-40">
-                  26/10/2546
-                </p>
-                <h1 className="font-bold">LineBot by Nodejs</h1>
-                <p>
-                  The Line Bot connects to google sheet and performs read/write
-                  and edit stock via chat room in the Line application.
-                </p>
-
-                <p className="mt-4">yyyyyyyyyy</p>
-              </div>
-            </div>
-
-            <div className="card-3 flex flex-col flex-[1]">
-              <div className="relative h-72 shadow-lg bg-left bg-black bg-no-repeat  bg-[url(/websocket.png)]">
-                <p className="absolute w-fit right-0 px-4 py-1 m-4 text-sm rounded-3xl bg-[#151515]">
-                  javascript
-                </p>
-              </div>
-              <div className="content flex-grow p-10 shadow-lg bg-white text-[#1E1E1E] leading-8">
-                <p className="date-time text-[#1E1E1E] opacity-40">
-                  26/10/2546
-                </p>
-                <h1 className="font-bold">Websocket & REST api</h1>
-                <p>
-                  Backend for train-to-moon project inspiration from website
-                  <a
-                    className="text-blue-400 hover:text-blue-500"
-                    href="https://drinksonme.live"
-                  >
-                    &nbsp; drinksonme.live
-                  </a>
-                  .
-                </p>
-
-                <p className="mt-4">yyyyyyyyyy</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="carousel-dot flex justify-center gap-6 mt-8">
-            <button className="h-4 w-4 rounded-full bg-[#3D3933]"></button>
-            <button className="h-4 w-4 rounded-full bg-[#D9D9D9]"></button>
-            <button className="h-4 w-4 rounded-full bg-[#D9D9D9]"></button>
-          </div>
-        </div>
-      </div>
-
-      <div className="section5-content px-40 py-10 text-center">
-        <h1 className="text-8xl mb-24">TECH I USE</h1>
-
-        <div className="relative border-[6px] rounded-[61px]">
-          <p className="absolute -top-6 left-28 px-8 text-2xl bg-[#0D0C0D]">
-            Front End
-          </p>
-          <div className="section5-conten-image-png flex px-8 py-12 gap-8 overflow-x-scroll">
-            <Image
-              src="/logo/flutter_logo.png"
-              alt="flutter_logo"
-              height={150}
-              width={150}
-            />
-            <Image
-              src="/logo/svelte_logo.png"
-              alt="svelte_logo"
-              height={150}
-              width={150}
-            />
-            <Image
-              src="/logo/react_logo.png"
-              alt="react_logo"
-              height={150}
-              width={150}
-            />
-            <Image
-              src="/logo/tailwindcss_logo.png"
-              alt="tailwindcss_logo"
-              height={150}
-              width={150}
-            />
-          </div>
-        </div>
-        <div className="relative mt-20 border-[6px] rounded-[61px]">
-          <p className="absolute -top-6 left-28 px-8 text-2xl bg-[#0D0C0D]">
-            Back End
-          </p>
-          <div className="section5-conten-image-png flex px-8 py-16 gap-8 overflow-x-scroll">
-            <Image
-              src="/logo/js_logo.png"
-              alt="js_logo"
-              height={150}
-              width={150}
-            />
-            <Image
-              src="/logo/ts_logo.png"
-              alt="ts_logo"
-              height={150}
-              width={150}
-            />
-            <Image
-              src="/logo/nodejs_logo.png"
-              alt="nodejs_logo"
-              height={150}
-              width={150}
-            />
-            <Image
-              src="/logo/py_logo.png"
-              alt="py_logo"
-              height={150}
-              width={150}
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="section5-content  py-20">
-        <div className="h-auto w-[80%] m-auto flex justify-center bg-[#d6c9ba]">
-          <img src="/myroom.png" alt="myroom" />
-        </div>
-        <div className="w-[80%] m-auto mt-8  flex justify-between">
-          <div>
-            <h1 className="text-7xl 2xl:text-8xl">THANK YOU SO</h1>
-            <h1 className="text-8xl 2xl:text-9xl">MUSH</h1>
-          </div>
-          <div className="contact-logo mt-8 2xl:mt-12">
-            <div className="flex justify-end gap-8">
-              <a
-                href="https://github.com/Z0TEExt"
-                className="relative bg-no-repeat h-12 w-12 rounded-full"
-              >
-                <Image src="/logo/gh_logo.png" alt="gh_logo" fill />
-              </a>
-              <a
-                href="#"
-                onClick={clickFacebook}
-                className="relative bg-no-repeat h-12 w-12 rounded-full "
-              >
-                <Image src="/logo/fb_logo.png" alt="fb_logo" fill />
-              </a>
-              <a
-                href="#"
-                className="relative bg-no-repeat h-12 w-12 rounded-full bg-white"
-              >
-                <Image src="/logo/mail.png" alt="mail_logo" fill />
-              </a>
-            </div>
-            <div className="mt-8 text-right text-2xl">
-              <p>วันนี้กินอะไรดี?</p>
-              <p>whyzotee</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </footer>
     </main>
   );
 }
