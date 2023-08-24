@@ -18,38 +18,40 @@ export default function Home() {
       loop: true,
     });
 
-    return () => {
-      // Destroy Typed instance during cleanup to stop animation
-      typed.destroy();
-    };
+    return () => typed.destroy();
   }, []);
 
   return (
     <main className="w-full m-auto overflow-y-hidden bg-[#252525]">
       <nav className="bg-[#505050]">
-        <div className="max-w-[1270px] p-4 m-auto flex justify-between font-bold">
-          <h1 className="text-[#FFDAB9] text-xl">@whyzotee</h1>
-          <ul className="flex gap-4 text-xl">
+        <div className="max-w-[1280px] py-4 m-auto flex justify-between font-semibold">
+          <h1 className="text-[#FFDAB9] text-xl ml-4 lg:ml-0">@whyzotee</h1>
+          <ul className="hidden lg:flex gap-8 text-xl">
             <li>
-              <Link href="#">Home</Link>
+              <Link href="#first_section">Home</Link>
             </li>
             <li>
-              <Link href="#">My Work</Link>
+              <Link href="#mywork_section">My Work</Link>
             </li>
             <li>
               <Link href="#">About me</Link>
             </li>
             <li>
-              <Link href="#">Github</Link>
+              <Link href="https://github.com/whyzotee" target="_blank">
+                Github
+              </Link>
             </li>
           </ul>
         </div>
       </nav>
 
-      <section className="max-w-[1270px] flex justify-center items-center m-auto py-24 gap-x-12">
-        <div className="w-1/2 flex flex-col text-base gap-y-6">
+      <section
+        id="first_section"
+        className="max-w-[1280px] flex flex-col-reverse lg:flex-row justify-center items-center m-auto py-12 lg:py-32 gap-x-12"
+      >
+        <div className="lg:w-1/2 flex flex-col lg:text-xl gap-y-2 lg:gap-y-6">
           <p>Welcome To my portfolio website</p>
-          <h1 className="flex text-3xl font-bold">
+          <h1 className="flex text-2xl lg:text-4xl font-bold">
             Hello World!, I&#39;m&nbsp;
             <span className="text-[#FFDAB9]" ref={wordAnim}></span>
           </h1>
@@ -59,25 +61,25 @@ export default function Home() {
             tell me about code if i didn&#39;t good enough and nice to meet you!
           </p>
           <Link
-            className="w-fit px-4 py-2 text-base bg-[#505050] rounded-lg"
+            className="text-center m-4 lg:m-0 lg:w-fit px-4 py-2 text-xl font-semibold bg-[#505050] rounded-lg"
             href="#"
           >
             Remume Click!
           </Link>
         </div>
-        <div className="w-1/2 ">
+        <div className="lg:w-1/2 lg:h-[500px]">
           <Lottie animationData={codingAnimation} loop={false} />
         </div>
       </section>
 
-      <section className="max-w-[1270px] flex m-auto py-12">
-        <div className="w-1/2 flex flex-col text-base">
-          <h1 className="text-3xl font-bold">Skils</h1>
-          <div className="flex my-8 gap-6 items-start">
-            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+      <section className="max-w-[1280px] flex flex-col lg:flex-row m-auto py-12">
+        <div className="lg:w-1/2 px-4 lg:px-0 flex flex-col text-base">
+          <h1 className="text-4xl font-bold">Skils</h1>
+          <div className="flex flex-col lg:flex-row my-12 gap-6 items-start">
+            <div className="h-16 w-16 p-3 bg-[#505050] rounded-full">
               <img src="/logo/flutter_logo.png" alt="flutter_logo" />
             </div>
-            <div className="lg:w-[70%] flex flex-col gap-2">
+            <div className="lg:w-[70%] flex flex-col gap-2 text-xl">
               <h2 className="flex items-center text-2xl font-bold">
                 Flutter&ensp;
                 <span className="text-base text-[#FFDAB9] font-normal">
@@ -91,11 +93,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex my-8 gap-6 items-start">
-            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full filter">
+          <div className="flex flex-col lg:flex-row my-12 gap-6 items-start">
+            <div className="h-16 w-16 p-3 bg-[#505050] rounded-full filter">
               <img src="/logo/react_logo.png " alt="react_logo" />
             </div>
-            <div className="lg:w-[70%] flex flex-col gap-2">
+            <div className="lg:w-[70%] flex flex-col gap-2 text-xl">
               <h2 className="flex items-center text-2xl font-bold">
                 React Js&ensp;
                 <span className="text-base text-[#FFDAB9] font-normal">
@@ -110,11 +112,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex my-8 gap-6 items-start">
-            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full filter">
+          <div className="flex flex-col lg:flex-row my-12 gap-6 items-start">
+            <div className="h-16 w-16 p-3 bg-[#505050] rounded-full filter">
               <img src="/logo/cpp_logo.png" alt="cpp_logo" />
             </div>
-            <div className="lg:w-[70%] flex flex-col gap-2">
+            <div className="lg:w-[70%] flex flex-col gap-2 text-xl">
               <h2 className="flex items-center text-2xl font-bold">
                 CPP&ensp;
                 <span className="text-base text-[#FFDAB9] font-normal">
@@ -128,11 +130,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex my-8 gap-6 items-start">
-            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+          <div className="flex flex-col lg:flex-row my-12 gap-6 items-start">
+            <div className="h-16 w-16 p-3 bg-[#505050] rounded-full">
               <img src="/logo/js_logo.png" alt="js_logo" />
             </div>
-            <div className="lg:w-[70%] flex flex-col gap-2">
+            <div className="lg:w-[70%] flex flex-col gap-2 text-xl">
               <h2 className="flex items-center text-2xl font-bold">
                 Javascript&ensp;
                 <span className="text-base text-[#FFDAB9] font-normal">
@@ -148,17 +150,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-1/2 flex flex-col">
-          <h1 className="text-[#FFDAB9] text-3xl font-bold">More Sikls</h1>
-          <div className="flex my-8 gap-6 items-start">
-            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+        <div className="lg:w-1/2 px-4 lg:px-0 flex flex-col">
+          <h1 className="text-[#FFDAB9] text-4xl font-bold">More Sikls</h1>
+          <div className="flex flex-col lg:flex-row my-12 gap-6 items-start">
+            <div className="h-16 w-16 p-3 bg-[#505050] rounded-full">
               <img
                 className="h-full w-full object-contain"
                 src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg"
                 alt="git_logo"
               />
             </div>
-            <div className="lg:w-[70%] flex flex-col gap-2">
+            <div className="lg:w-[70%] flex flex-col gap-2 text-xl">
               <h2 className="flex items-center text-2xl font-bold">
                 Git&ensp;
                 <span className="text-base text-[#FFDAB9] font-normal">
@@ -172,15 +174,15 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex my-8 gap-6 items-start">
-            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+          <div className="flex flex-col lg:flex-row my-12 gap-6 items-start">
+            <div className="h-16 w-16 p-3 bg-[#505050] rounded-full">
               <img
                 className="h-full w-full object-contain invert"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/800px-GitHub_Invertocat_Logo.svg.png"
                 alt="git_logo"
               />
             </div>
-            <div className="lg:w-[70%] flex flex-col gap-2">
+            <div className="lg:w-[70%] flex flex-col gap-2 text-xl">
               <h2 className="flex items-center text-2xl font-bold">
                 Github&ensp;
                 <span className="text-base text-[#FFDAB9] font-normal">
@@ -194,15 +196,15 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex my-8 gap-6 items-start">
-            <div className="h-12 w-12 p-2 bg-[#505050] rounded-full">
+          <div className="flex flex-col lg:flex-row my-12 gap-6 items-start">
+            <div className="h-16 w-16 p-3 bg-[#505050] rounded-full">
               <img
                 className="h-full w-full object-contain"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png"
                 alt="figma_logo"
               />
             </div>
-            <div className="lg:w-[70%] flex flex-col gap-2">
+            <div className="lg:w-[70%] flex flex-col gap-2 text-xl">
               <h2 className="flex items-center text-2xl font-bold">
                 Figma&ensp;
                 <span className="text-base text-[#FFDAB9] font-normal">
@@ -220,13 +222,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-[1270px] flex justify-center m-auto py-12">
-        <h1 className="text-3xl font-bold">My Work</h1>
+      <section className="max-w-[1280px] flex justify-center m-auto py-12">
+        <h1 id="mywork_section" className="text-4xl font-bold">
+          My Work
+        </h1>
       </section>
 
       <footer className="bg-[#505050]">
-        <div className="max-w-[1270px] p-4 m-auto flex font-bold">
-          <div className="text-base w-1/3">
+        <div className="max-w-[1280px] p-4 m-auto flex flex-col lg:flex-row font-bold">
+          <div className="text-base lg:w-1/3">
             <h1 className="text-xl text-[#FFDAB9]">@whyzotee</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sed
@@ -235,10 +239,10 @@ export default function Home() {
               nesciunt quod nisi quia modi.
             </p>
           </div>
-          <div className="w-1/3">
+          <div className="lg:w-1/3">
             <h1 className="text-xl text-[#FFDAB9]">Follow Me</h1>
           </div>
-          <div className="w-1/3">
+          <div className="lg:w-1/3">
             <h1 className="text-xl text-[#FFDAB9]">Another Link</h1>
             <ul>
               <li>Brabrabra</li>
