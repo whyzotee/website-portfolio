@@ -19,13 +19,8 @@ export default function Home({
   const wordAnim = React.useRef(null);
 
   React.useEffect(() => {
-    let typedText =
-      currentLocale == "th-TH"
-        ? ["นักพัฒนา", "และ", "นักศึกษา"]
-        : ["Chatnarint.", "Developer.", "Student."];
-
     const typed = new Typed(wordAnim.current, {
-      strings: typedText,
+      strings: ["Chatnarint.", "Developer.", "Student."],
       typeSpeed: 150,
       backSpeed: 100,
       backDelay: 1000,
@@ -33,7 +28,7 @@ export default function Home({
     });
 
     return () => typed.destroy();
-  }, [currentLocale]);
+  }, []);
 
   return (
     <main className="w-full m-auto overflow-y-hidden bg-[#252525]">
@@ -72,8 +67,7 @@ export default function Home({
             <FormattedMessage id="welcome.msg" />
           </p>
           <h1 className="flex text-2xl lg:text-4xl font-bold">
-            <FormattedMessage id="hello.world" />
-            &nbsp;
+            Hello World!, I&#39;m&nbsp;
             <span className="text-[#FFDAB9]" ref={wordAnim}></span>
           </h1>
           <p>
