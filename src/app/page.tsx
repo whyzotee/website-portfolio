@@ -13,7 +13,7 @@ import Experience from "@/components/experience";
 export default function Home() {
   const [stdImg, setStdImg] = useState("/student-removebg.png");
   const isAlternateImage = stdImg !== "/student-removebg.png";
-  const [borderSize, setBorderSize] = useState(false);
+  const [borderSize, setBorderSize] = useState(true);
 
   const toggleImage = () => {
     setStdImg(isAlternateImage ? "/student-removebg.png" : "/profile.png");
@@ -38,8 +38,10 @@ export default function Home() {
         <div className="absolute h-full w-full bg-gradient-to-b from-transparent from-0% to-[#1f1f1f] to-100%"></div>
         <div className="flex flex-col text-white items-center justify-center z-20">
           <div className="relative">
-            <h1 className="text-9xl font-semibold">แฟ้มสะสมผลงาน</h1>
-            <h3 className="absolute -top-12 right-0 text-5xl font-semibold">
+            <h1 className="text-3xl lg:text-9xl font-semibold">
+              แฟ้มสะสมผลงาน
+            </h1>
+            <h3 className="absolute -top-4 lg:-top-12 right-0 lg:text-5xl font-semibold">
               ฉัตรนรินทร บุญแสง
             </h3>
           </div>
@@ -47,7 +49,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ease: "anticipate", duration: 1 }}
-            className="eng-text text-3xl font-semibold"
+            className="eng-text text-center lg:text-3xl font-semibold"
           >
             วิศวกรรมคอมพิวเตอร์,&ensp;
             <span className="text-[#F16322]">
@@ -64,7 +66,7 @@ export default function Home() {
           }}
           loop={true}
           animationData={mouseScrolling}
-          className="absolute flex justify-center items-center cursor-pointer bottom-24"
+          className="hidden absolute lg:flex justify-center items-center cursor-pointer bottom-24"
         />
       </div>
 
@@ -72,19 +74,21 @@ export default function Home() {
         id="about"
         className="relative h-screen w-full flex flex-col gap-12 items-center justify-center bg-[#1f1f1f] p-12 text-white"
       >
-        <h1 className="text-6xl font-semibold z-20">ประวัติส่วนตัว</h1>
+        <h1 className="text-3xl lg:text-6xl font-semibold z-20">
+          ประวัติส่วนตัว
+        </h1>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="flex gap-12 text-xl z-20"
+          className="flex flex-col lg:flex-row items-center gap-12 text-xl z-20"
         >
-          <div className="w-1/2 flex flex-col justify-center items-end">
-            <div className="relative h-80 w-[16.5rem] bg-[#ffdab9]">
+          <div className="lg:w-1/2 flex flex-col justify-center">
+            <div className="relative h-80 w-[16.5rem] m-auto lg:mr-0 bg-[#ffdab9]">
               <Image fill src={stdImg} alt="profile" className="object-cover" />
             </div>
-            <div className="w-[16.5rem] flex bg-white text-[#1f1f1f] ">
+            <div className="w-[16.5rem] flex m-auto lg:mr-0 bg-white text-[#1f1f1f] ">
               <div className="w-full flex items-center gap-2 p-2 font-semibold">
                 <h1>01</h1>
                 <hr className={divider01} />
@@ -122,7 +126,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="w-1/2 flex flex-col gap-2">
+          <div className="lg:w-1/2 flex flex-col gap-2">
             <span>ชื่อ-นามสกุล : ฉัตรนรินทร บุญแสง</span>
             <span>ชื่อเล่น : ตี๋</span>
             <span>วันเกิด-อายุ : 26 ตุลาคม 2546 (19 ปี)</span>
@@ -156,7 +160,7 @@ export default function Home() {
       </motion.div>
 
       <div className="max-w-7xl w-full m-auto flex flex-col gap-12 bg-[#1f1f1f] py-24">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -180,9 +184,9 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="w-full flex justify-end"
+            className="w-full flex justify-center lg:justify-end"
           >
-            <div className="relative w-[38rem] h-[38rem] rounded-2xl bg-white overflow-clip mt-24">
+            <div className="relative h-72 w-72 sm:h-96 sm:w-96 lg:w-[38rem] lg:h-[38rem] rounded-2xl bg-white overflow-clip mt-24">
               <Image src="/phone.png" alt="iphone_screenshot" fill />
             </div>
           </motion.div>
