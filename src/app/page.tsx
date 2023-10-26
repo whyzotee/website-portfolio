@@ -48,7 +48,7 @@ export default function Home() {
             </span>
           </motion.h5>
         </div>
-        {/* <Lottie
+        <Lottie
           onClick={() => {
             const aboutElement = document.getElementById("about");
             if (aboutElement) {
@@ -58,7 +58,7 @@ export default function Home() {
           loop={true}
           animationData={mouseScrolling}
           className="hidden absolute lg:flex justify-center items-center cursor-pointer bottom-24"
-        /> */}
+        />
       </div>
       <AboutMe />
       <Experience />
