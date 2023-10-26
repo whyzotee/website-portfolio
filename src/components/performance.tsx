@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-import PerformanceData from "@/app/performace.json";
 import { motion } from "framer-motion";
 import {
   Button,
@@ -19,6 +19,11 @@ interface BoxPerformanceProps {
   altText: string;
   title: string;
   codeLang: string;
+  projectName: string;
+  about: string;
+  tools: string;
+  description: string;
+  modalImages: string;
 }
 
 function BoxPerformance({
@@ -26,32 +31,13 @@ function BoxPerformance({
   altText,
   title,
   codeLang,
+  projectName,
+  about,
+  tools,
+  description,
+  modalImages,
 }: BoxPerformanceProps) {
-  return (
-    <div className="relative bg-white rounded-xl overflow-clip hover:scale-105">
-      <div className="absolute h-80 w-full bg-gradient-to-b from-transparent from-90% to-[#1f1f1f] to-100% opacity-10 z-10"></div>
-
-      <div className="absolute top-0 right-0 z-20 bg-[#1f1f1f] text-white px-4 py-2 m-4 rounded-xl">
-        <p>{codeLang}</p>
-      </div>
-
-      <div className="relative h-80 w-full">
-        <Image
-          src={imageSrc}
-          alt={altText}
-          fill
-          className="object-cover object-center"
-        />
-      </div>
-
-      <div className="p-4 text-center">{title}</div>
-    </div>
-  );
-}
-
-export default function Performance() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
   return (
     <>
       <Modal
@@ -63,28 +49,17 @@ export default function Performance() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                UDee เรื่องบ้าน เรื่องงาย
-              </ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
               <ModalBody>
-                <div className="relative h-96 w-full">
-                  <Image
-                    src="/performance/udee1.jpg"
-                    alt="udee1"
-                    fill
-                    className="object-cover object-center rounded-xl overflow-clip"
-                  />
-                </div>
-                {/* <span>ชื่อโปรเจค : {modalData.project_name}</span> */}
-                <span>เกี่ยวกับ : Coding, Application</span>
-                <span>
-                  เครื่องมือที่ใช้ : Flutter Framework ภาษาคอมพิวเตอร์ Dart
-                </span>
-                <span>
-                  รายละเอียด : โปรเจคของทางบริษัท เปเปอร์เลสจำกัด
-                  ที่ทำแอปพลิเคชั่นเกี่ยวกับจากจัดการ ของหมู่บบ้านแต่ละหมู่บ้าน
-                  ที่จะมีทั้งลูกบ้านและนิติที่คอยติดต่อกัน
-                </span>
+                <img
+                  src={modalImages}
+                  alt={`${projectName}_img`}
+                  className="object-contain h-96 w-fit m-auto rounded-xl overflow-clip"
+                />
+                <span>ชื่อโปรเจค : {projectName}</span>
+                <span>เกี่ยวกับ : {about}</span>
+                <span>เครื่องมือที่ใช้ : {tools}</span>
+                <span>รายละเอียด : {description}</span>
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" onPress={onClose}>
@@ -95,6 +70,33 @@ export default function Performance() {
           )}
         </ModalContent>
       </Modal>
+      <button onClick={onOpen}>
+        <div className="relative bg-white rounded-xl overflow-clip hover:scale-105">
+          <div className="absolute h-80 w-full bg-gradient-to-b from-transparent from-90% to-[#1f1f1f] to-100% opacity-10 z-10"></div>
+
+          <div className="absolute top-0 right-0 z-20 bg-[#1f1f1f] text-white px-4 py-2 m-4 rounded-xl">
+            <p>{codeLang}</p>
+          </div>
+
+          <div className="relative h-80 w-full">
+            <Image
+              src={imageSrc}
+              alt={altText}
+              fill
+              className="object-cover object-center"
+            />
+          </div>
+
+          <div className="p-4 text-center">{title}</div>
+        </div>
+      </button>
+    </>
+  );
+}
+
+export default function Performance() {
+  return (
+    <>
       <div className="max-w-7xl w-full py-24 z-20">
         <div className="flex flex-col lg:flex-row items-center justify-between pb-36">
           <motion.div
@@ -127,135 +129,75 @@ export default function Performance() {
             </div>
           </motion.div>
         </div>
-        <Tabs
-          size="lg"
-          aria-label="Options"
-          className="my-12 hidden lg:block w-fit"
-        >
-          <Tab key="all" title="ทั้งหมด">
-            <div className="grid-cols-3 gap-12 hidden lg:grid">
-              <button onClick={onOpen}>
-                <BoxPerformance
-                  imageSrc="/phone.png"
-                  altText="udee_logo"
-                  title="UDee Application"
-                  codeLang="Flutter / Dart"
-                />
-              </button>
-              <BoxPerformance
-                imageSrc="/performance/sushidrop_logo.png"
-                altText="sushidrop_logo"
-                title="SushiDrop Delivery Application"
-                codeLang="Flutter / Dart"
-              />
-              <BoxPerformance
-                imageSrc="/performance/linebot.png"
-                altText="linebot"
-                title="LineBot Stock Check"
-                codeLang="Nodejs / JavaScript"
-              />
-              <BoxPerformance
-                imageSrc="/performance/robot.png"
-                altText="robot"
-                // แข่งขันหุ่นยนต์อัตโนมัติในงานอุตสาหกรรมอาชีวศึกษา ระดับชาติ 2566 อันดับที่ 12 เหรียญเงิน
-                title="แข่งขันหุ่นยนต์อัตโนมัติในงานอุตสาหกรรม ระดับชาติ"
-                codeLang="Arduino / C++"
-              />
-              <BoxPerformance
-                imageSrc="/performance/microbit.jpg"
-                altText="microbit"
-                // แข่งทักษะการเขียนโปรแกรมควมคุมอุปกรณ์ ระดับภาคเหนือ อันดับที่ 1 เหรียญทอง
-                title="แข่งทักษะการเขียนโปรแกรมควมคุมอุปกรณ์ ระดับภาค"
-                codeLang="Mu / Python"
-              />
-              <BoxPerformance
-                imageSrc="/bg_myroom.png"
-                altText="myRoom"
-                title="Empty Room"
-                codeLang="Blender"
-              />
-              <a
-                href="https://www.tiktok.com/@whyzotee/video/7173315105780780289"
-                target="_blank"
-              >
-                <BoxPerformance
-                  imageSrc="/performance/animation1.jpg"
-                  altText="animation1"
-                  title="คลิปโปรโมทแผนกอิเล็กฯ วิทยาลัยเทคนิคเชียงใหม่"
-                  codeLang="Video Editor"
-                />
-              </a>
-            </div>
-          </Tab>
-          <Tab key="work" title="การทำงาน">
-            <div className="grid grid-cols-3 gap-12">
-              <button onClick={onOpen}>
-                <BoxPerformance
-                  imageSrc="/phone.png"
-                  altText="udee_logo"
-                  title="UDee Application"
-                  codeLang="Flutter / Dart"
-                />
-              </button>
-            </div>
-          </Tab>
-          <Tab key="race" title="การแข่งขัน">
-            <div className="grid grid-cols-3 gap-12">
-              <BoxPerformance
-                imageSrc="/performance/robot.png"
-                altText="robot"
-                // แข่งขันหุ่นยนต์อัตโนมัติในงานอุตสาหกรรมอาชีวศึกษา ระดับชาติ 2566 อันดับที่ 12 เหรียญเงิน
-                title="แข่งขันหุ่นยนต์อัตโนมัติในงานอุตสาหกรรม ระดับชาติ"
-                codeLang="Arduino / C++"
-              />
-              <BoxPerformance
-                imageSrc="/performance/microbit.jpg"
-                altText="microbit"
-                // แข่งทักษะการเขียนโปรแกรมควมคุมอุปกรณ์ ระดับภาคเหนือ อันดับที่ 1 เหรียญทอง
-                title="แข่งทักษะการเขียนโปรแกรมควมคุมอุปกรณ์ ระดับภาค"
-                codeLang="Mu / Python"
-              />
-            </div>
-          </Tab>
-          <Tab key="project" title="โปรเจค">
-            <div className="grid grid-cols-3 gap-12">
-              <BoxPerformance
-                imageSrc="/performance/sushidrop_logo.png"
-                altText="sushidrop_logo"
-                title="SushiDrop Delivery Application"
-                codeLang="Flutter / Dart"
-              />
-              <BoxPerformance
-                imageSrc="/performance/linebot.png"
-                altText="linebot"
-                title="LineBot Stock Check"
-                codeLang="Nodejs / JavaScript"
-              />
-            </div>
-          </Tab>
+        <div className="grid-cols-3 gap-12 hidden lg:grid my-12">
+          <BoxPerformance
+            imageSrc="/phone.png"
+            altText="udee_logo"
+            title="UDee Application"
+            codeLang="Flutter / Dart"
+            projectName="UDee / UDee Niti"
+            about="Coding, Application"
+            tools="Flutter Framework ภาษาคอมพิวเตอร์ Dart"
+            description="โปรเจคของทางบริษัท เปเปอร์เลส จำกัดที่ทำแอปพลิเคชั่นเกี่ยวกับการจัดการ ของหมู่บบ้านแต่ละหมู่บ้านที่จะมีทั้งลูกบ้านและนิติที่คอยติดต่อกันผ่านแอปพลิเคชั่น มีการแจ้งเตือนลูกบ้านเกี่ยวกับพัสดุ และแจ้งปัญหากับนิติได้"
+            modalImages="/performance/udee1.jpg"
+          />
+          <BoxPerformance
+            imageSrc="/performance/sushidrop_logo.png"
+            altText="sushidrop_logo"
+            title="SushiDrop Delivery Application"
+            codeLang="Flutter / Dart"
+            projectName="SushiDrop"
+            about="Coding, Application"
+            tools="Flutter Framework ภาษาคอมพิวเตอร์ Dart"
+            description="โปรเจคของทางบริษัท เปเปอร์เลส จำกัดที่ทำแอปพลิเคชั่น ที่ให้ทำในช่วงที่กำลังฝึกงานระดับชั้นปวส.1 ระยะเวลา 2 เดือน เป็นแอปพลิเคชั่นสำหรับสั่งอาหารและตรวจสอบ การเดินทางของ Rider แต่เนื่องจากเวลาที่จำกัดจึงไม่สามารถทำฟังก์ชั่นทั้งหมดให้เสร็จได้"
+            modalImages="/performance/sushidrop.png"
+          />
+          <BoxPerformance
+            imageSrc="/performance/linebot.png"
+            altText="linebot"
+            title="LineBot Stock Check"
+            codeLang="Nodejs / JavaScript"
+            projectName="LineBot Stock Check"
+            about="Coding"
+            tools="Nodejs ภาษาคอมพิวเตอร์ JavaScript"
+            description="โปรเจคของทางหจก.หัวกะทิ วิศวกรรม ที่ให้ทำในช่วงที่กำลังฝึกงานระดับชั้นปวช.3 ระยะเวลา 4 เดือน เป็นการตรวจสอบ Stock ที่ดึงข้อมูลจาก Google Sheet นำมาเสนอบน แอปพลิเคชั่น Line"
+            modalImages="/performance/linebot_modal.png"
+          />
 
-          <Tab key="more" title="อื่นๆ">
-            <div className="grid grid-cols-3 gap-12">
-              <BoxPerformance
-                imageSrc="/bg_myroom.png"
-                altText="myRoom"
-                title="Empty Room"
-                codeLang="Blender"
-              />
-              <a
-                href="https://www.tiktok.com/@whyzotee/video/7173315105780780289"
-                target="_blank"
-              >
-                <BoxPerformance
-                  imageSrc="/performance/animation1.jpg"
-                  altText="animation1"
-                  title="คลิปโปรโมทแผนกอิเล็กฯ วิทยาลัยเทคนิคเชียงใหม่"
-                  codeLang="Video Editor"
-                />
-              </a>
-            </div>
-          </Tab>
-        </Tabs>
+          <BoxPerformance
+            imageSrc="/performance/robot.png"
+            altText="robot"
+            title="แข่งขันหุ่นยนต์อัตโนมัติในงานอุตสาหกรรม ระดับชาติ"
+            codeLang="Arduino / C++"
+            projectName="รายการแข่งขันหุ่นยนต์อัตโนมัติในงานอุตสาหกรรม ณ เซียร์รังสิต"
+            about="การแข่งขัน, Coding, Robot, Electronic"
+            tools="โปรแกรม Vscode ภาษาคอมพิวเตอร์ C++"
+            description="การแข่งขันหุ่นยนต์ ABU อาชีวศึกษา ระดับชาติ รอบคัดเลือก หมวดหมู่ แข่งขันหุ่นยนต์อัตโนมัติในงานอุตสาหกรรมอาชีวศึกษา ประจำปี 2566 จบด้วยการเข้ารอบ 16 ทีมสุดท้ายอันดับที่ 12 (เหรียญเงิน)"
+            modalImages="/performance/robot1.jpg"
+          />
+          <BoxPerformance
+            imageSrc="/performance/microbit.jpg"
+            altText="microbit"
+            title="แข่งทักษะการเขียนโปรแกรมควมคุมอุปกรณ์ ระดับภาค"
+            codeLang="Mu / Python"
+            projectName="รายการแข่งทักษะการเขียนโปรแกรมควมคุมอุปกรณ์ ณ วิทยาลัยเทคนิคเชียงราย"
+            about="การแข่งขัน, Coding, MicroController, Electronic"
+            tools="โปรแกรม Mu ภาษาคอมพิวเตอร์ Python"
+            description="การแข่งทักษะวิชาชีพระดับภาค ภาคเหนือ ครั้งที่ 32 ณ วิทยาลัยเทคนิคเชียงราย เป็นการแข่งทักษะการเขียนโปรแกรมควมคุมอุปกรณ์ ได้อันดับที่ 1 (เหรียญทอง)"
+            modalImages="/performance/microbit1.jpeg"
+          />
+          <BoxPerformance
+            imageSrc="/performance/animation1.jpg"
+            altText="animation1"
+            title="คลิปโปรโมทแผนกอิเล็กฯ วิทยาลัยเทคนิคเชียงใหม่"
+            codeLang="Video Editor"
+            projectName="คลิปโปรโมทแผนกอิเล็กฯ วิทยาลัยเทคนิคเชียงใหม่"
+            about="การประกวดคลิป, Animation, Drawing"
+            tools="Davinci Resolve"
+            description="แผนกได้จัดการประกวดคลืปโปรโมทแผนกอิเล็กทรอนิกส์ ณ วิทยาลัยเทคนิคเชียงใหม่ เป็นการประกวดคลิปสั้นไม่เกิน 40-60 วินาที บน Platform TikTok"
+            modalImages="/performance/animation1.jpg"
+          />
+        </div>
       </div>
     </>
   );

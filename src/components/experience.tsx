@@ -88,10 +88,7 @@ export default function Experience() {
                         โดยเรียนจบที่เกรดเฉลี่ยสะสมทั้งหมด (GPAX) อยู่ที่ 3.02
                         ครับ
                         ส่วนตัวผมที่ชอบเกี่ยวกับคอมพิวเตอร์อยู่แล้วจึงสามารถเรียนที่นี้ได้อย่างราบรื่น
-                        ได้ทำ
-                        <a href="#" className="text-red-300">
-                          โปรเจคจบคือทำเกมประกอบคอมพิวเตอร์
-                        </a>
+                        ได้ทำโปรเจคจบคือทำเกมประกอบคอมพิวเตอร์
                         แล้วได้ศึกษาต่อในระดับปวส.ต่อที่นี้
                       </p>
                     </div>
@@ -161,6 +158,7 @@ export default function Experience() {
               <br />
               <Accordion
                 variant="splitted"
+                // defaultExpandedKeys={["1", "2", "3"]}
                 defaultExpandedKeys={["3"]}
                 className="max-w-7xl w-screen gap-4"
               >

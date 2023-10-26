@@ -48,7 +48,7 @@ export default function Home() {
             </span>
           </motion.h5>
         </div>
-        <Lottie
+        {/* <Lottie
           onClick={() => {
             const aboutElement = document.getElementById("about");
             if (aboutElement) {
@@ -58,7 +58,7 @@ export default function Home() {
           loop={true}
           animationData={mouseScrolling}
           className="hidden absolute lg:flex justify-center items-center cursor-pointer bottom-24"
-        />
+        /> */}
       </div>
       <AboutMe />
       <Experience />
@@ -80,8 +80,8 @@ export default function Home() {
             <br />
             <p>
               &emsp;ด้วยปัจจัยหลายๆด้าน เช่น
-              ย้ายมาเรียนที่กรุงเทพนัน้นเพื่อจะได้อยู่ใกล้คุณแม่
-              ที่ทำงานอยู่ภายในกรุงเทพนี้, เรียนอย่างต่อเนื่อง
+              ย้ายมาเรียนที่กรุงเทพนั้นเพื่อจะได้อยู่ใกล้คุณแม่
+              ที่ทำงานอยู่ภายในกรุงเทพ, เรียนอย่างต่อเนื่อง
               ในประเทศไทยนั้นน้อยมากที่มหาลัยส่วนใหญ่ภายในประเทศจะไม่มีหลักสูตรสำหรับคนที่จบ
               ปวส. เลยทำให้บางคนต้องเรียนใหม่ 4ปี
               ซึ่งผมรู้สึกเสียดายเวลาที่เสียไป
