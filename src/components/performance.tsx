@@ -8,11 +8,9 @@ import {
   ModalBody,
   ModalContent,
   ModalHeader,
-  Tab,
-  Tabs,
   useDisclosure,
 } from "@nextui-org/react";
-import React, { useState } from "react";
+import React from "react";
 
 interface BoxPerformanceProps {
   imageSrc: string;
@@ -24,6 +22,8 @@ interface BoxPerformanceProps {
   tools: string;
   description: string;
   modalImages: string;
+  urlLink: string;
+  buttonTitle: string;
 }
 
 function BoxPerformance({
@@ -36,8 +36,14 @@ function BoxPerformance({
   tools,
   description,
   modalImages,
+  urlLink,
+  buttonTitle,
 }: BoxPerformanceProps) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  let hasLink = urlLink !== "";
+  let buttonCss = hasLink ? "block text-white bg-[#F16322]" : "hidden";
+
   return (
     <>
       <Modal
@@ -62,9 +68,16 @@ function BoxPerformance({
                 <span>รายละเอียด : {description}</span>
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" onPress={onClose}>
+                <Button
+                  color="danger"
+                  variant={hasLink ? "light" : "solid"}
+                  onPress={onClose}
+                >
                   ปิดหน้าต่าง
                 </Button>
+                <a href={urlLink} target="_blank">
+                  <Button className={buttonCss}>{buttonTitle}</Button>
+                </a>
               </ModalFooter>
             </>
           )}
@@ -129,6 +142,7 @@ export default function Performance() {
             </div>
           </motion.div>
         </div>
+
         <div className="grid-cols-3 gap-12 hidden lg:grid my-12">
           <BoxPerformance
             imageSrc="/phone.png"
@@ -140,6 +154,8 @@ export default function Performance() {
             tools="Flutter Framework ภาษาคอมพิวเตอร์ Dart"
             description="โปรเจคของทางบริษัท เปเปอร์เลส จำกัดที่ทำแอปพลิเคชั่นเกี่ยวกับการจัดการ ของหมู่บบ้านแต่ละหมู่บ้านที่จะมีทั้งลูกบ้านและนิติที่คอยติดต่อกันผ่านแอปพลิเคชั่น มีการแจ้งเตือนลูกบ้านเกี่ยวกับพัสดุ และแจ้งปัญหากับนิติได้"
             modalImages="/performance/udee1.jpg"
+            urlLink=""
+            buttonTitle=""
           />
           <BoxPerformance
             imageSrc="/performance/sushidrop_logo.png"
@@ -151,6 +167,8 @@ export default function Performance() {
             tools="Flutter Framework ภาษาคอมพิวเตอร์ Dart"
             description="โปรเจคของทางบริษัท เปเปอร์เลส จำกัดที่ทำแอปพลิเคชั่น ที่ให้ทำในช่วงที่กำลังฝึกงานระดับชั้นปวส.1 ระยะเวลา 2 เดือน เป็นแอปพลิเคชั่นสำหรับสั่งอาหารและตรวจสอบ การเดินทางของ Rider แต่เนื่องจากเวลาที่จำกัดจึงไม่สามารถทำฟังก์ชั่นทั้งหมดให้เสร็จได้"
             modalImages="/performance/sushidrop.png"
+            urlLink=""
+            buttonTitle=""
           />
           <BoxPerformance
             imageSrc="/performance/linebot.png"
@@ -162,6 +180,8 @@ export default function Performance() {
             tools="Nodejs ภาษาคอมพิวเตอร์ JavaScript"
             description="โปรเจคของทางหจก.หัวกะทิ วิศวกรรม ที่ให้ทำในช่วงที่กำลังฝึกงานระดับชั้นปวช.3 ระยะเวลา 4 เดือน เป็นการตรวจสอบ Stock ที่ดึงข้อมูลจาก Google Sheet นำมาเสนอบน แอปพลิเคชั่น Line"
             modalImages="/performance/linebot_modal.png"
+            urlLink="https://github.com/whyzotee/linebot-nodejs-googlesheet"
+            buttonTitle="โปรเจค"
           />
 
           <BoxPerformance
@@ -174,6 +194,8 @@ export default function Performance() {
             tools="โปรแกรม Vscode ภาษาคอมพิวเตอร์ C++"
             description="การแข่งขันหุ่นยนต์ ABU อาชีวศึกษา ระดับชาติ รอบคัดเลือก หมวดหมู่ แข่งขันหุ่นยนต์อัตโนมัติในงานอุตสาหกรรมอาชีวศึกษา ประจำปี 2566 จบด้วยการเข้ารอบ 16 ทีมสุดท้ายอันดับที่ 12 (เหรียญเงิน)"
             modalImages="/performance/robot1.jpg"
+            urlLink="https://github.com/whyzotee/robot-linetracking/blob/main/src/main.cpp"
+            buttonTitle="Source Code"
           />
           <BoxPerformance
             imageSrc="/performance/microbit.jpg"
@@ -185,6 +207,8 @@ export default function Performance() {
             tools="โปรแกรม Mu ภาษาคอมพิวเตอร์ Python"
             description="การแข่งทักษะวิชาชีพระดับภาค ภาคเหนือ ครั้งที่ 32 ณ วิทยาลัยเทคนิคเชียงราย เป็นการแข่งทักษะการเขียนโปรแกรมควมคุมอุปกรณ์ ได้อันดับที่ 1 (เหรียญทอง)"
             modalImages="/performance/microbit1.jpeg"
+            urlLink="/pdf/Cert1.pdf"
+            buttonTitle="เกียรติบัตร"
           />
           <BoxPerformance
             imageSrc="/performance/animation1.jpg"
@@ -196,6 +220,8 @@ export default function Performance() {
             tools="Davinci Resolve"
             description="แผนกได้จัดการประกวดคลืปโปรโมทแผนกอิเล็กทรอนิกส์ ณ วิทยาลัยเทคนิคเชียงใหม่ เป็นการประกวดคลิปสั้นไม่เกิน 40-60 วินาที บน Platform TikTok"
             modalImages="/performance/animation1.jpg"
+            urlLink="https://www.tiktok.com/@whyzotee/video/7173315105780780289"
+            buttonTitle="ชมผลงาน"
           />
         </div>
       </div>

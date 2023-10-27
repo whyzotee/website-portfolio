@@ -86,7 +86,7 @@ export default function AboutMe() {
             จ.เชียงใหม่ 50300
           </span>
           <span>งานอดิเรก : เขียนโค้ด ฟังเพลง เล่นเกม นอน</span>
-          <span>ความสามารถพิเศษ : พูดให้คนงงได้ครับ</span>
+          <span>ความสามารถพิเศษ : เรียนรู้สิ่งใหม่ๆได้ค่อนข้างไว้ครับ</span>
         </div>
       </motion.div>
       <div className="absolute left-36 top-24">

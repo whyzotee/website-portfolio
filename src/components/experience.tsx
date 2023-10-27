@@ -189,11 +189,24 @@ export default function Experience() {
                       />
                     </div>
                   </div>
-                  <div className="my-4 flex gap-2">
-                    <Chip size="md">Intern</Chip>
-                    <Chip size="md">EV</Chip>
-                    <Chip size="md">Electoric</Chip>
-                    <Chip size="md">Software Engineer</Chip>
+
+                  <div className="my-4 flex justify-between">
+                    <div className="flex gap-2">
+                      <Chip size="md">Intern</Chip>
+                      <Chip size="md">EV</Chip>
+                      <Chip size="md">Electoric</Chip>
+                      <Chip size="md">Software Engineer</Chip>
+                    </div>
+                    <Tooltip content="คลิกเพื่อแสดงโปรเจค">
+                      <a
+                        href="https://github.com/whyzotee/linebot-nodejs-googlesheet"
+                        target="_blank"
+                      >
+                        <Button className="text-white bg-[#F16322]">
+                          โปรเจค
+                        </Button>
+                      </a>
+                    </Tooltip>
                   </div>
                 </AccordionItem>
                 <AccordionItem
@@ -263,12 +276,21 @@ export default function Experience() {
                       />
                     </div>
                   </div>
-                  <div className="my-4 flex gap-2">
-                    <Chip size="md">Intern</Chip>
-                    <Chip size="md">Freelance</Chip>
-                    <Chip size="md">Developer</Chip>
-                    <Chip size="md">Application</Chip>
-                    <Chip size="md">Flutter</Chip>
+                  <div className="my-4 flex justify-between">
+                    <div className="flex gap-2">
+                      <Chip size="md">Intern</Chip>
+                      <Chip size="md">Freelance</Chip>
+                      <Chip size="md">Developer</Chip>
+                      <Chip size="md">Application</Chip>
+                      <Chip size="md">Flutter</Chip>
+                    </div>
+                    <Tooltip content="คลิกเพื่อดูเว็บไซต์บริษัท">
+                      <a href="https://www.paperless-th.com" target="_blank">
+                        <Button className="text-white bg-[#F16322]">
+                          เว็บไซต์
+                        </Button>
+                      </a>
+                    </Tooltip>
                   </div>
                 </AccordionItem>
               </Accordion>
